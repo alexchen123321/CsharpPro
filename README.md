@@ -16,15 +16,14 @@ Database constraints can be specified via Data Annotations in Model
 Data Annotations appears above property-names in a Model
 Common Data Annotations
 ```
-| 
 
-|  Data Annotation  |  Effect
-|  [Required]  |  The column cannot be NULL
-|  [MaxLength(<size>) |  The max length for a column
-|  [Column(<name>) |  Override the default column-name (which is the Model’s property-name) to <name>
-|  [Key] | Specify a property-name as the primary key, and not use the property-name Id for default primary key
-
-
+    
+|  Data Annotation   |  Effect  |
+|  ----  | ----  |
+| [Required]  | The column cannot be NULL |   
+| [MaxLength(<size>)  | Override the default column-name (which is the Model’s property-name) to <name> |
+| [Column(<name>)  | Override the default column-name (which is the Model’s property-name) to <name> |  
+| [Key]  | Specify a property-name as the primary key, and not use the property-name Id for default primary key |
 
 ```
 public class <ModelName>
