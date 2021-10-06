@@ -52,6 +52,8 @@ namespace StreamingIndustry
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
         }
     }
 }

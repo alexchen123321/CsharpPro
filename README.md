@@ -8,7 +8,24 @@ Microsoft.EntityFrameworkCore.Proxies
 ```
 
 
-### 2. Model
+### 2. Model (Operate in Models Folder)
+
+####  Data Annotations
+```
+Database constraints can be specified via Data Annotations in Model
+Data Annotations appears above property-names in a Model
+Common Data Annotations
+```
+| 
+
+|  Data Annotation  |  Effect
+|  [Required]  |  The column cannot be NULL
+|  [MaxLength(<size>) |  The max length for a column
+|  [Column(<name>) |  Override the default column-name (which is the Model’s property-name) to <name>
+|  [Key] | Specify a property-name as the primary key, and not use the property-name Id for default primary key
+
+
+
 ```
 public class <ModelName>
 {
@@ -53,4 +70,29 @@ namespace StreamingIndustry.Models
     }
 }
 ```
+DB
+```
+using System;
+using Microsoft.EntityFrameworkCore;
 
+namespace StreamingIndustry.Models
+{
+    public class DBContext: DbContext
+    {
+        public DBContext(DbContextOptions<DBContext> options) :base(options)
+        {
+
+        }
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+        }
+
+        public DbSet<Song> Songs { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+
+    }
+}
+
+```
+
+###3 setup
